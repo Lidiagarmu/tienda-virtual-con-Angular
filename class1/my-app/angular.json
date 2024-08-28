@@ -3,9 +3,21 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "my-app": {
+    "shop-app": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "standalone": false,
+          "style": "css",
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "standalone": false
+        },
+        "@schematics/angular:pipe": {
+          "standalone": false
+        }
+        },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -13,7 +25,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/my-app",
+            "outputPath": "dist/shop-app",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -59,10 +71,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "my-app:build:production"
+              "buildTarget": "shop-app:build:production"
             },
             "development": {
-              "buildTarget": "my-app:build:development"
+              "buildTarget": "shop-app:build:development"
             }
           },
           "defaultConfiguration": "development"
