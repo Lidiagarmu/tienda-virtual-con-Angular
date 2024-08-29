@@ -1,6 +1,6 @@
 :host {
     display: block;
-    background-color: rgba(52, 89, 236, 0.862);
+    background-color: #3459ecdc;
     height: 60px;
     font-size: 1.25rem;
     color: #ffffff;
@@ -13,6 +13,7 @@
         float: right;
         margin-right: 5%;
     }
+
     .cart img {
         width: 30px;
         height: 30px;
@@ -21,4 +22,10 @@
     .cart span {
         font-size: 0.8rem;
     }
+
+    .imagen-con-borde{
+        border: 1px solid black;
+        border-radius: 5px;
+    }
 }
+

@@ -1,1 +1,11 @@
-<p>product works!</p>
+
+<!--con las dobles llaves {{}} accederemos al products del app.component.ts . la tecnica se llama interpolacion de strings-->
+
+<h1>{{product.name}}</h1>
+<p>{{product.description}}</p>
+<span class="price">
+  {{product.price | number:'1.0-2'}}
+  <span class="currency-symbol">€</span>
+</span>
+
+<button (click)="add()" >Agregar</button> 

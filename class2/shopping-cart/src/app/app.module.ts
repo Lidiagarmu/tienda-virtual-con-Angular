@@ -7,6 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProductComponent } from './product/product.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +17,8 @@ import { ProductComponent } from './product/product.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+   // CommonModule //este modulo provee de las directivas estructurales ngFor, ngIf...Aunque BrowserMdule ya trabaja con el por defecto
   ],
   providers: [],
   bootstrap: [AppComponent]

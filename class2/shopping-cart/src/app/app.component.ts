@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 
+import {IProduct} from './interfaces/product.interface';
+
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,4 +10,20 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'shopping-cart';
+  products: IProduct[] = [];
+
+  constructor() {
+    localStorage.setItem('cart', JSON.stringify([]));
+  }
+
+  ngOnInit() {
+    this.products = [
+      { id: 1, name: 'samsung note 10', description: 'Cámara de 20 mpx, resistente al agua 10m profundidad', price: 560, img: '' },
+      { id: 2, name: 'iphone 12', description: 'Pantalla OLED de 6.1 pulgadas, chip A14 Bionic', price: 799, img: '' },
+      { id: 3, name: 'google pixel 5', description: 'Cámara trasera dual, pantalla de 90 Hz. Bateria de larga duración', price: 699, img: '' },
+      { id: 4, name: 'oneplus 8', description: 'Cámara de 48 MP, batería de larga duración', price: 499, img: '' },
+      { id: 5, name: 'xiaomi mi 10', description: 'Pantalla AMOLED, procesador Snapdragon 865', price: 599, img: '' },
+      { id: 6, name: 'huawei p40', description: 'Cámara Leica, batería de 4200 mAh, resistente al agua 10m', price: 650, img: '' }
+    ];
+  }
 }

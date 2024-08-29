@@ -1,5 +1,9 @@
 <app-header></app-header>
 <div class="content">
-    
+  
+  <div class="product" *ngFor="let item of products"> 
+    <app-product [product]="item"></app-product> //esto del [product] se llama property binding
+  </div>
+ 
 </div>
 <app-footer></app-footer>
