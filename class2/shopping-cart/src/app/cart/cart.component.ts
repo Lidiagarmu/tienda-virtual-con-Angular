@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ICart } from '../interfaces';
 
 
@@ -28,7 +28,7 @@ cantidad y sumando los resultados.
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.scss'
 })
-export class CartComponent {
+export class CartComponent implements OnInit{
 
   cart : ICart[] = []
 

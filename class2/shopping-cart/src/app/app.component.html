@@ -1,8 +1,9 @@
-<app-header></app-header>
+<app-header (show)=toogleCart()></app-header>
+<app-cart *ngIf="show"></app-cart>
 <div class="content">
   
   <div class="product" *ngFor="let item of products"> 
-    <app-product [product]="item"></app-product> //esto del [product] se llama property binding
+    <app-product [product]="item"></app-product> <!--esto del [product] se llama property binding-->
   </div>
  
 </div>

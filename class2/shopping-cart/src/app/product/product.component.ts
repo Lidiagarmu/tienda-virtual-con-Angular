@@ -5,7 +5,7 @@ import { IProduct, ICart } from '../interfaces';
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
-  styleUrl: './product.component.scss'
+  styleUrls: ['./product.component.scss']
 })
 export class ProductComponent implements OnInit{
   
@@ -54,6 +54,14 @@ Si cartString es null, significa que no hay ningún carrito guardado, por lo que
       this.cart = []; // Inicializa el carrito vacío si no hay nada en localStorage
     }
 
+    //existingProductIndex se crea para evitar duplicados en el carrito del mismo producto
+
+    const existingProductIndex = this.cart.findIndex(item => item.name === this.product.name);
+
+    if (existingProductIndex > -1) {
+      // Si el producto ya está en el carrito, incrementa la cantidad
+      this.cart[existingProductIndex].quantity += 1;
+    } else {
     
 
   /*
@@ -88,4 +96,6 @@ inicial (que se establece en 1).
     localStorage.setItem('cart', JSON.stringify(this.cart));
   }
   
+}
+
 }

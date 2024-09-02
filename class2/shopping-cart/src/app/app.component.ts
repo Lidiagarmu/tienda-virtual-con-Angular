@@ -7,16 +7,25 @@ import { ICart } from './interfaces';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   title = 'shopping-cart';
   products: IProduct[] = [];
-  cart: ICart[] = [];
-  show: boolean = false;
+  //cart: ICart[] = [];
+  show: boolean;
 
   constructor() {
+    /*
+    asi lo tenia el PROFE
     localStorage.setItem('cart', JSON.stringify([this.cart]));
+    this.show = false;
+    */
+    this.show= false;
+    const cartString = localStorage.getItem('cart');
+      if (!cartString) {
+        localStorage.setItem('cart', JSON.stringify([])); // Inicializa como un array vacío
+  }
   }
 
   ngOnInit() {
@@ -28,5 +37,9 @@ export class AppComponent {
       { id: 5, name: 'xiaomi mi 10', description: 'Pantalla AMOLED, procesador Snapdragon 865', price: 599, img: '' },
       { id: 6, name: 'huawei p40', description: 'Cámara Leica, batería de 4200 mAh, resistente al agua 10m', price: 650, img: '' }
     ];
+  }
+
+  toogleCart() {
+    this.show = !this.show;
   }
 }
