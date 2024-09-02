@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 import {IProduct} from './interfaces/product.interface';
+import { ICart } from './interfaces';
 
 
 @Component({
@@ -11,9 +12,11 @@ import {IProduct} from './interfaces/product.interface';
 export class AppComponent {
   title = 'shopping-cart';
   products: IProduct[] = [];
+  cart: ICart[] = [];
+  show: boolean = false;
 
   constructor() {
-    localStorage.setItem('cart', JSON.stringify([]));
+    localStorage.setItem('cart', JSON.stringify([this.cart]));
   }
 
   ngOnInit() {
